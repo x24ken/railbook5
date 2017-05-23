@@ -1,2 +1,4 @@
-class ViewController < ApplicationControlle
+class ViewController < ApplicationController
+  def keyword
+  end
 end
