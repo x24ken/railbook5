@@ -14,4 +14,8 @@ class ViewController < ApplicationController
   def html5
     @book = Book.new
   end
+  
+  def select
+    @book = Book.new(publish: '技術評論社')
+  end
 end
