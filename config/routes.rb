@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   get 'view/select_tag2'
   get 'view/col_select2'
   get 'view/group_select2'
+  get 'view/dat_select'
 end
