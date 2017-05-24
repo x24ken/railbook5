@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :users
   resources :books
   
+  get 'hello/list'
+  
   #４章
   get 'view/keyword'
   post 'keyword/search'# TODO: 後で実装？
