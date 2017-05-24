@@ -53,4 +53,8 @@ class ViewController < ApplicationController
   def fields
     @user = User.find(1)
   end
+  
+  def conc
+    @books = Book.all
+  end
 end
