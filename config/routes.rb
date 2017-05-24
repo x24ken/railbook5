@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get 'view/form_tag'
   post 'view/create' # TODO: 後で実装？
   get 'view/form_for'
+  get 'view/field'
 end
