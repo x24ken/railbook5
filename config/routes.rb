@@ -30,4 +30,5 @@ Rails.application.routes.draw do
   get 'view/excerpt'
   get 'view/highlight'
   get 'view/conc'
+  get 'view/sanitize'
 end
