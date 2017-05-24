@@ -49,4 +49,8 @@ class ViewController < ApplicationController
     @book  = Book.new(publish: '技術評論社')
     @books = Book.select(:publish).distinct
   end
+  
+  def fields
+    @user = User.find(1)
+  end
 end
