@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   post 'keyword/search'# TODO: 後で実装？
   get 'view/form_tag'
   post 'view/create' # TODO: 後で実装？
+  get 'view/form_for'
 end
