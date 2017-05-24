@@ -30,4 +30,14 @@ class ViewController < ApplicationController
     @review = Review.new
     @authors = Author.all
   end
+  
+  def col_select2
+    #選択オプションの情報を取得
+    @books = Book.select(:publish).distinct
+  end
+  
+  def group_select2
+    @review = Review.new
+    @authors = Author.all
+  end
 end
