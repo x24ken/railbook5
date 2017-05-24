@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   post 'view/create' # TODO: 後で実装？
   get 'view/form_for'
   get 'view/field'
+  get 'view/html5'
 end
