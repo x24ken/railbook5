@@ -59,8 +59,8 @@ class ViewController < ApplicationController
   end
   
   #デフォルトオプションの設定
-  def default_url_options(options = {})
-    { charset: 'utf-8' }
-  end
+  # def default_url_options(options = {})
+  #   { charset: 'utf-8' }
+  # end
   
 end

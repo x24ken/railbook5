@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   
   get 'hello/list'
   get 'hello/index'
+  get 'login/index'
+  get 'login/info'
   
   #４章
   get 'view/keyword'
@@ -39,4 +41,5 @@ Rails.application.routes.draw do
   get 'view/urlfor'
   get 'view/new'
   get 'members/login'
+  get 'view/linkif'
 end
