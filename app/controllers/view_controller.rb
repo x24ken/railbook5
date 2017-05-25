@@ -57,4 +57,10 @@ class ViewController < ApplicationController
   def conc
     @books = Book.all
   end
+  
+  #デフォルトオプションの設定
+  def default_url_options(options = {})
+    { charset: 'utf-8' }
+  end
+  
 end
