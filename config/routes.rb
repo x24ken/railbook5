@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :books
   
   get 'hello/list'
+  get 'hello/index'
   
   #４章
   get 'view/keyword'
@@ -34,4 +35,5 @@ Rails.application.routes.draw do
   get 'view/format'
   get 'view/number_to'
   get 'view/datetime'
+  get 'view/link'
 end
