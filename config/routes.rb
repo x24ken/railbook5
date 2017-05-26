@@ -51,4 +51,5 @@ Rails.application.routes.draw do
   get 'view/path'
   get 'view/capture'
   get 'view/tag'
+  get 'view/content_tag'
 end
