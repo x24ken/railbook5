@@ -79,4 +79,7 @@ Rails.application.routes.draw do
   get 'record/reorder'
   get 'record/select'
   get 'record/select2'
+  get 'record/offset'
+  get 'record/page(/:id)' => 'record#page'
+  get 'record/last'
 end

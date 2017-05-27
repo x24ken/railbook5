@@ -62,4 +62,21 @@ class RecordController < ApplicationController
   def select2
     @pubs = Book.select(:publish).distinct.distinct(false)
   end
+  
+  def offset
+    @books = Book.order(published: :desc).limit(3).offset(4)
+    render "hello/list"
+  end
+  
+  def page
+    page_size = 3 #ページ当たりの表示件数
+    page_num = params[:id] == nil ? 0 : params[:id].to_i - 1 #現在のページ数
+    @books = Book.order(published: :desc).limit(page_size).offset(page_size * page_num)
+    render 'hello/list'
+  end
+  
+  def last
+    @book = Book.order(published: :desc).limit(3).last
+    render 'books/show'
+  end
 end
