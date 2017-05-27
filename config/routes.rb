@@ -54,4 +54,5 @@ Rails.application.routes.draw do
   get 'view/content_tag'
   get 'view/helper'
   get 'view/helper2'
+  get 'view/helper3'
 end
