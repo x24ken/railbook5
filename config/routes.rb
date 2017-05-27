@@ -83,4 +83,6 @@ Rails.application.routes.draw do
   get 'record/page(/:id)' => 'record#page'
   get 'record/last'
   get 'record/groupby'
+  get 'record/havingby'
+  get 'record/where2'
 end
