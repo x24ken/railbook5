@@ -76,4 +76,5 @@ Rails.application.routes.draw do
   get 'record/not(/:id)' => 'record#not'
   get 'record/where_or'
   get 'record/order'
+  get 'record/reorder'
 end
