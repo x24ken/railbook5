@@ -1,3 +1,4 @@
 <div id="info">
-  <%= render 'books/book', book: @book, type: :details %>
+  <%= render partial: 'books/book', layout: 'books/frame', 
+    locals: { book: @book, type: :simple } %>
 </div>
