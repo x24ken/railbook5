@@ -74,4 +74,6 @@ Rails.application.routes.draw do
   get 'record/keyword'
   post 'record/ph1'
   get 'record/not(/:id)' => 'record#not'
+  get 'record/where_or'
+  get 'record/order'
 end
