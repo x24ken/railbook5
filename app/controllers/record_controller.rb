@@ -22,15 +22,20 @@ class RecordController < ApplicationController
   def keyword
   end
   
+  def ph1
+    @books = Book.where('publish = ? AND price >= ?',
+    params[:publish], params[:price])
+    render 'hello/list'
+  end
+  
   # def ph1
-  #   @books = Book.where('publish = ? AND price >= ?',
-  #   params[:publish], params[:price])
-  #   render 'hello/list'
+  #   @books = Book.where('publish = :publish AND price >= :price',
+  #             publish: params[:publish], price: params[:price])
+  #   render "hello/list"
   # end
   
-  def ph1
-    @books = Book.where('publish = :publish AND price >= :price',
-              publish: params[:publish], price: params[:price])
-    render "hello/list"
+  def not
+    @books = Book.where.not(isbn: params[:id])
+    render 'books/index'
   end
 end
