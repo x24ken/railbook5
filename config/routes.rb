@@ -82,4 +82,5 @@ Rails.application.routes.draw do
   get 'record/offset'
   get 'record/page(/:id)' => 'record#page'
   get 'record/last'
+  get 'record/groupby'
 end
