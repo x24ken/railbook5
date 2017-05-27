@@ -58,4 +58,8 @@ class RecordController < ApplicationController
     @books = Book.where('price >= 2000').select(:title, :price)
     render 'hello/list'
   end
+  
+  def select2
+    @pubs = Book.select(:publish).distinct.distinct(false)
+  end
 end
