@@ -70,4 +70,7 @@ Rails.application.routes.draw do
   get 'record/find'
   get 'record/find_by'
   get 'record/find_by2'
+  get 'record/where'
+  get 'record/keyword'
+  post 'record/ph1'
 end

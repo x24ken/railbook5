@@ -13,4 +13,18 @@ class RecordController < ApplicationController
     @book = Book.find_by(publish: '技術評論社', price: 2980)
     render 'books/show'
   end
+  
+  def where
+    @books = Book.where(publish: ['技術評論社', '翔泳社'])
+    render 'hello/list'
+  end
+  
+  def keyword
+  end
+  
+  def ph1
+    @books = Book.where('publish = ? AND price >= ?',
+    params[:publish], params[:price])
+    render 'hello/list'
+  end
 end
