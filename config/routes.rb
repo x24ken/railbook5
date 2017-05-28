@@ -101,4 +101,5 @@ Rails.application.routes.draw do
   get 'record/update_all2'
   get 'record/destroy_all'
   get 'record/transact'
+  get 'record/enum_rec'
 end
