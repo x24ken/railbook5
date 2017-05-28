@@ -89,4 +89,13 @@ Rails.application.routes.draw do
   get 'record/unscope2'
   get 'record/none(/:id)' => 'record#none'
   get 'record/pluck'
+  get 'record/exists'
+  get 'record/scope'
+  get 'record/def_scope'
+  get 'record/count'
+  get 'record/average'
+  get 'record/groupby2'
+  get 'record/literal_sql'
+  get 'record/update_all'
+  get 'record/update_all2'
 end
