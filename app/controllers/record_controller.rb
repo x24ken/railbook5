@@ -169,4 +169,10 @@ class RecordController < ApplicationController
     cnt = Book.order(:published).limit(5).update_all('price = price * 0.8')
     render plain: "#{cnt}件のデーターを更新しました。"
   end
+  
+  def destroy_all
+    Book.where.not(publish: '技術評論社').destroy_all
+    render plain: '削除完了'
+  end
+
 end
