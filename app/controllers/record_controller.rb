@@ -202,5 +202,21 @@ class RecordController < ApplicationController
     @review.published!
     render plain: 'ステータス:' + @review.status
   end
-
+  
+  #検索フォームを表示する
+  def keywd
+    @search = SearchKeyword.new
+  end
+  
+  #検索ボタンがクリックされた場合に呼び出されるアクション
+  def keywd_process
+    #入力値をもとにモデルオブジェクトを生成
+    @search = SearchKeyword.new(params.require(:search_keyword).permit(:keyword))
+    #検証を実施（正解時はキーワードを、　エラー時はエラーメッセージを表示)
+    if @search.valid?
+      render plain: @search.keyword
+    else
+      render plain: @search.errors.full_messages[0]
+    end
+  end
 end
