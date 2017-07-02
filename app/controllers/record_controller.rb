@@ -219,4 +219,16 @@ class RecordController < ApplicationController
       render plain: @search.errors.full_messages[0]
     end
   end
+  
+  def belongs
+    @review = Review.find(3)
+  end
+  
+  def hasmany
+    @book = Book.find_by(isbn: '978-4-7741-8411-1')
+  end
+
+  def hasone
+    @user = User.find_by(username: 'yyamada')
+  end
 end

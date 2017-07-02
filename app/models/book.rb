@@ -1,4 +1,6 @@
 class Book < ApplicationRecord
+  has_many :reviews
+  
   validates :isbn,
     presence: true,
     uniqueness: true,

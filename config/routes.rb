@@ -104,4 +104,7 @@ Rails.application.routes.draw do
   get 'record/enum_rec'
   get 'record/keywd'
   post 'record/keywd_process'
+  get 'record/belongs'
+  get 'record/hasmany'
+  get 'record/hasone'
 end
