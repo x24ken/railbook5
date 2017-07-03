@@ -1,6 +1,7 @@
 class Book < ApplicationRecord
-  after_destroy :history_book,
-    unless: Proc.new { |b| b.publish == "unknown" }
+  after_destroy do |b|
+    logger.info('deleted: ' + b.inspect)
+  end
   
   has_many :reviews
   
@@ -30,8 +31,4 @@ class Book < ApplicationRecord
     where(publish: pub).order(published: :desc).limit(5)
   }
   
-  private
-    def history_book
-      logger.info('deleted: ' + self.inspect)
-    end
 end
