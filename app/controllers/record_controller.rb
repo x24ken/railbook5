@@ -239,4 +239,24 @@ class RecordController < ApplicationController
   def has_many_through
     @user = User.find_by(username: 'isatou')
   end
+  
+  def cache_counter
+    @user = User.find(1)
+    render plain: @user.reviews.size
+  end
+  
+  def memorize
+    @book = Book.find(1)
+    #書籍情報に関連するメモを登録
+    @memo = @book.memos.build({ body: 'あとで買う'})
+    if @memo.save
+      render plain: 'メモを作成しました'
+    else
+      render plain: @memo.errors.full_messages[0]
+    end
+  end
+  
+  def assoc_includes
+    @books = Book.all
+  end
 end

@@ -109,4 +109,7 @@ Rails.application.routes.draw do
   get 'record/hasone'
   get 'record/has_and_belongs'
   get 'record/has_many_through'
+  get 'record/cache_counter'
+  get 'record/memorize'
+  get 'record/assoc_includes'
 end
