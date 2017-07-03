@@ -112,4 +112,8 @@ Rails.application.routes.draw do
   get 'record/cache_counter'
   get 'record/memorize'
   get 'record/assoc_includes'
+  
+  #第６章
+  get 'ctrl/para(/:id)' => 'ctrl#para'
+  get 'ctrl/para_array'
 end

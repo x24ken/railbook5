@@ -69,10 +69,10 @@ ActiveRecord::Schema.define(version: 20170528022839) do
   create_table "reviews", force: :cascade do |t|
     t.integer  "book_id"
     t.integer  "user_id"
-    t.integer  "status"
+    t.integer  "status",     default: 0, null: false
     t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.index ["book_id"], name: "index_reviews_on_book_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
@@ -83,9 +83,9 @@ ActiveRecord::Schema.define(version: 20170528022839) do
     t.string   "email"
     t.boolean  "dm"
     t.string   "roles"
-    t.integer  "reviews_count"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.integer  "reviews_count",   default: 0
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
 end
