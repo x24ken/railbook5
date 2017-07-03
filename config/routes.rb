@@ -116,4 +116,10 @@ Rails.application.routes.draw do
   #第６章
   get 'ctrl/para(/:id)' => 'ctrl#para'
   get 'ctrl/para_array'
+  get 'ctrl/req_head'
+  get 'ctrl/req_head2'
+  get 'ctrl/upload'
+  post 'ctrl/upload_process'
+  get 'ctrl/updb(/:id)' => 'ctrl#updb'
+  patch 'ctrl/updb_process(/:id)' => 'ctrl#updb_process'
 end
