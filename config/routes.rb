@@ -122,4 +122,5 @@ Rails.application.routes.draw do
   post 'ctrl/upload_process'
   get 'ctrl/updb(/:id)' => 'ctrl#updb'
   patch 'ctrl/updb_process(/:id)' => 'ctrl#updb_process'
+  get 'ctrl/show_photo(/:id)' => 'ctrl#show_photo'
 end

@@ -49,5 +49,14 @@ class CtrlController < ApplicationController
       render plain: @author.errors.full_messages[0]
     end
   end
+  
+  def show_photo
+    #ルートパラメーターが指定されている場合はその値を、さもなければ１をセット
+    id = params[:id] ? params[:id] : 1
+    #authorsテーブルからid値をキーにレコードを取得
+    @author = Author.find(id)
+    #photo列（バイナリ型）をレスポンスとして出力
+    send_data @author.photo, type: @author.ctype, disposition: :inline
+  end
     
 end
