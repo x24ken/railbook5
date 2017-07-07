@@ -1,4 +1,7 @@
 class CtrlController < ApplicationController
+  #aroundフィルターの登録
+  around_action :around_logger
+  
   def para
     render plain: 'idパラメーター :' + params[:id]
   end
@@ -99,4 +102,18 @@ class CtrlController < ApplicationController
     session[:email] = params[:email]
     render plain: 'セッションを保存しました。'
   end
+  
+  #フィルターの動作を確認するためのindexアクションを定義
+  def index
+    sleep 3 #実行時刻に差をつけるための休止処理
+    render plain: 'indexアクションが実行されました'
+  end
+  
+  private
+    #開始時刻をログに記録
+    def around_logger
+      logger.debug('[Start]' + Time.now.to_s)
+      yield #アクションを実行
+      logger.debug('[Finish]' + Time.now.to_s)
+    end
 end

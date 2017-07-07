@@ -130,4 +130,5 @@ Rails.application.routes.draw do
   post 'ctrl/cookie_rec'
   get 'ctrl/session_show'
   post 'ctrl/session_rec'
+  get 'ctrl/index'
 end
