@@ -1,7 +1,8 @@
 class CtrlController < ApplicationController
-  #before/afterフィルターの登録
-  before_action :start_logger
-  after_action :end_logger
+  
+  #indexアクションに対してbeforeフィルターauthを登録
+  
+  before_action :auth, only: :index
   
   def para
     render plain: 'idパラメーター :' + params[:id]
@@ -111,12 +112,13 @@ class CtrlController < ApplicationController
   end
   
   private
-    #開始時刻をログに記録
-    def start_logger
-      logger.debug('[Start] ' + Time.now.to_s)
-    end
-    
-    def end_logger
-      logger.debug('[Finish] ' + Time.now.to_s)
+    def auth
+      #認証用に利用するユーザー名/パスワード
+      name = "yyamada"
+      password = "8cb2237d0679ca88db6464eac60da96345513964"
+      authenticate_or_request_with_http_basic('Railsbook') do |n, p|
+        n == name &&
+          Digest::SHA1.hexdigest(p) == password
+      end
     end
 end
