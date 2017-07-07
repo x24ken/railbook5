@@ -123,4 +123,11 @@ Rails.application.routes.draw do
   get 'ctrl/updb(/:id)' => 'ctrl#updb'
   patch 'ctrl/updb_process(/:id)' => 'ctrl#updb_process'
   get 'ctrl/show_photo(/:id)' => 'ctrl#show_photo'
+  get 'ctrl/log'
+  get 'ctrl/get_xml'
+  get 'ctrl/get_json'
+  get 'ctrl/cookie'
+  post 'ctrl/cookie_rec'
+  get 'ctrl/session_show'
+  post 'ctrl/session_rec'
 end
