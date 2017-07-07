@@ -1,6 +1,7 @@
 class CtrlController < ApplicationController
-  #aroundフィルターの登録
-  around_action :around_logger
+  #before/afterフィルターの登録
+  before_action :start_logger
+  after_action :end_logger
   
   def para
     render plain: 'idパラメーター :' + params[:id]
@@ -111,9 +112,11 @@ class CtrlController < ApplicationController
   
   private
     #開始時刻をログに記録
-    def around_logger
-      logger.debug('[Start]' + Time.now.to_s)
-      yield #アクションを実行
-      logger.debug('[Finish]' + Time.now.to_s)
+    def start_logger
+      logger.debug('[Start] ' + Time.now.to_s)
+    end
+    
+    def end_logger
+      logger.debug('[Finish] ' + Time.now.to_s)
     end
 end
