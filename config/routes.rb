@@ -6,10 +6,13 @@ Rails.application.routes.draw do
   resources :users
   resources :books
   
-  get 'hello/list'
+  get 'hello/index', to: 'hello#index'
+  get 'hoge/piyo', to: 'hello#index'
   get 'hello/index'
-  get 'login/index'
-  get 'login/info'
+  get 'hello/view'
+  get 'hello/nothing'
+  get 'hello/app_var'
+  get 'hello/list'
   
   #４章
   get 'view/keyword'
@@ -131,4 +134,8 @@ Rails.application.routes.draw do
   get 'ctrl/session_show'
   post 'ctrl/session_rec'
   get 'ctrl/index'
+  get 'ctrl/index2'
+  get 'login/index'
+  post 'login/auth'
+  get 'login/logout'
 end
