@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
   
   add_flash_types :info
   
-  before_action :detect_dev
   
   private
   

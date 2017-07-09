@@ -4,8 +4,7 @@ Rails.application.routes.draw do
   resources :reviews
   resources :authors
   resources :users
-  resources :books
-  
+  resources :books, 
   get 'hello/index', to: 'hello#index'
   get 'hoge/piyo', to: 'hello#index'
   get 'hello/index'
