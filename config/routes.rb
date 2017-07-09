@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   resources :members
   resources :fan_comments
-  resources :reviews
+  # resources :reviews
   resources :authors
   resources :users
-  resources :books
+  resources :books do
+    resources :reviews
+  end
   get 'hello/index', to: 'hello#index'
   get 'hoge/piyo', to: 'hello#index'
   get 'hello/index'
