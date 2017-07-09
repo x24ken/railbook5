@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :authors
   resources :users
   resources :books do
-    resources :reviews
+    resources :reviews, shallow: true
   end
   get 'hello/index', to: 'hello#index'
   get 'hoge/piyo', to: 'hello#index'
