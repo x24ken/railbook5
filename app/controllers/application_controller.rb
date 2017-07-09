@@ -3,6 +3,12 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  #RecordNotFound例外を処理するのはid_invalidメゾット
+  rescue_from ActiveRecord::RecordNotFound, with: :id_invalid
+  
+  add_flash_types :info
+  
+  before_action :detect_dev
   
   private
   
@@ -18,5 +24,10 @@ class ApplicationController < ActionController::Base
         flash[:referer] = request.fullpath
         redirect_to controller: :login, action: :index
       end
+    end
+    
+    def id_invalid(e)
+      #ステータス404(Not Found)で指定ビューを描画
+      render 'shared/record_not_found', status: 404
     end
 end
