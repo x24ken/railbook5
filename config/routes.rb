@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   resources :fan_comments
   resources :reviews
   resources :authors
-  resources :users
-  resources :books, 
+  resources :user
+  # resources :books
+  scope :admin do
+    resources :books
+  end
   get 'hello/index', to: 'hello#index'
   get 'hoge/piyo', to: 'hello#index'
   get 'hello/index'
