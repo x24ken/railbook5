@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
-  concern :additional do
-    get :unapproval, on: :collection
-    get :draft, on: :member
-  end
   resources :members
   resources :fan_comments
-  resources :reviews, concerns: :additional
+  resources :reviews
   resources :authors
-  resources :users, concerns: :additional
+  resources :users
   resources :books
+  root to: 'books#index' #rootはroutes.rb末尾で登録した方がいい
+
+  
   get 'hello/index', to: 'hello#index'
   get 'hoge/piyo', to: 'hello#index'
   get 'hello/index'
@@ -16,7 +15,7 @@ Rails.application.routes.draw do
   get 'hello/nothing'
   get 'hello/app_var'
   get 'hello/list'
-  
+
   #４章
   get 'view/keyword'
   post 'keyword/search'# TODO: 後で実装？
