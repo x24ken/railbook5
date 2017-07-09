@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
+  concern :additional do
+    get :unapproval, on: :collection
+    get :draft, on: :member
+  end
   resources :members
   resources :fan_comments
-  # resources :reviews
+  resources :reviews, concerns: :additional
   resources :authors
-  resources :users
-  resources :books do
-    resources :reviews, shallow: true
-  end
+  resources :users, concerns: :additional
+  resources :books
   get 'hello/index', to: 'hello#index'
   get 'hoge/piyo', to: 'hello#index'
   get 'hello/index'
