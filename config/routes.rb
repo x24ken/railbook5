@@ -5,8 +5,6 @@ Rails.application.routes.draw do
   resources :authors
   resources :users
   resources :books
-  root to: 'books#index' #rootはroutes.rb末尾で登録した方がいい
-
   
   get 'hello/index', to: 'hello#index'
   get 'hoge/piyo', to: 'hello#index'
