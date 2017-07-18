@@ -138,4 +138,13 @@ Rails.application.routes.draw do
   get 'login/index'
   post 'login/auth'
   get 'login/logout'
+  
+  #第９章
+  get 'ajax/index'
+  get 'ajax/upanel'
+  get 'ajax/search'
+  post 'ajax/result'
+  get 'ajax/keywd'
+  get 'ajax/slideshow'
+  post 'ajax/search_slide'
 end
