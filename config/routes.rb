@@ -147,4 +147,7 @@ Rails.application.routes.draw do
   get 'ajax/keywd'
   get 'ajax/slideshow'
   post 'ajax/search_slide'
+  
+  #第１０章
+  get 'extra/sendmail'
 end

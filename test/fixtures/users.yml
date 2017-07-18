@@ -47,9 +47,9 @@ shayashi:
 
 nkakeya:
   id: 6
-  username: nkakeya
+  username: x24ken
   password_digest: $2a$10$uTwYyniemA7y7.z80yw17uqmRzN/LggEoSzUe.tXGdCUWPvYp9M2m
-  email: nami-piano@nifty.com
+  email: x24ken@gmail.com
   dm: true
   roles: manager,member
   reviews_count: 0
